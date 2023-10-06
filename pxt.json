@@ -11,12 +11,9 @@
         "main.ts",
         "README.md",
         "assets.json",
-        "damage-indicators.ts",
-        "test.ts"
+        "damage-indicators.ts"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "testFiles": [],
     "targetVersions": {
         "target": "1.12.41",
         "targetId": "arcade"
