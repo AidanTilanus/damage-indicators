@@ -1,4 +1,4 @@
-//% color="#7e1db3"
+//% color="#7e1db3" icon="⚔"
 //% block="Damage Indicators"
 namespace damageIndicators {
     let indicator: Sprite
