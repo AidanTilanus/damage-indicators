@@ -3,7 +3,7 @@
 namespace damageIndicators {
     let indicator: Sprite
     
-    //% block="$parent show a text indicator with the text $text|| and the color $color and a fontSize of $fontSize and with gravity $gravity and a initial velocity of $initialVelocity"
+    //% block="$parent show a text indicator with the text $text|| and the color $color and a fontsize of $fontSize and with gravity $gravity and a initial velocity of $initialVelocity"
     //% blockId=damageindicatorsshowindicator
     //% inlineInputMode=inline
     //% parent.shadow=variables_get
