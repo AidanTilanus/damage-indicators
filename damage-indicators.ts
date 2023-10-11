@@ -5,7 +5,7 @@ namespace damageIndicators {
     
     //% block="$sprite show $text|| | with color $color and fontsize $fontSize and gravity $gravity and initial velocity $initialVelocity"
     //% blockId=damageindicatorsshowindicator
-    //% inlineInputMode=inline
+    //% inlineInputMode=external
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% text.defl="-1"
