@@ -1,5 +1,5 @@
 {
-    "name": "Damage Indicators",
+    "name": "damage-indicators",
     "description": "",
     "dependencies": {
         "device": "*",
