@@ -17,7 +17,7 @@ enum IndicatorPropertiesGet {
 //% block="Damage Indicators"
 //% groups="['Basic', 'Customization']"
 namespace damageIndicators {
-    let indicatorSprite: Sprite
+    let indicatorSprite: TextSprite
 
     export class Indicator {
         text: string
@@ -26,6 +26,7 @@ namespace damageIndicators {
         gravity: number
         initialVelocity: number
         randomSpread: number
+        icon: Image
 
         constructor(text: string, color: number) {
             this.text = text
@@ -48,6 +49,9 @@ namespace damageIndicators {
             indicatorSprite.lifespan = randint(600, 700)
             indicatorSprite.setFlag(SpriteFlag.AutoDestroy, true)
             indicatorSprite.setFlag(SpriteFlag.Ghost, true)
+            if(this.icon) {
+                indicatorSprite.setIcon(this.icon)
+            }
         }
     }
 
@@ -171,5 +175,15 @@ namespace damageIndicators {
     //% indicator.defl=myIndicator
     export function getIndicatorText(indicator: Indicator) {
         return indicator.text
+    }
+
+    //% block="set $indicator icon to $icon"
+    //% blockId="damageIndicatorsSetIcon"
+    //% group="Customization"
+    //% indicator.shadow=variables_get
+    //% indicator.defl=myIndicator
+    //% icon.shadow=screen_image_picker
+    export function setIndicatorIcon(indicator: Indicator, icon: Image) {
+        indicator.icon = icon
     }
 }
