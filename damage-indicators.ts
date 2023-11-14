@@ -4,15 +4,6 @@ enum IndicatorProperties {
     initialvelocity,
     randomspread
 }
-
-enum IndicatorPropertiesGet {
-    fontsize,
-    gravity,
-    initialvelocity,
-    randomspread,
-    color
-}
-
 //% color="#328da8" icon="⚔"
 //% block="Damage Indicators"
 //% groups="['Basic', 'Customization']"
@@ -84,19 +75,17 @@ namespace damageIndicators {
     //% indicator.shadow=variables_get
     //% indicator.defl=myIndicator
     export function setIndicatorProperty(indicator: Indicator, property: IndicatorProperties, value: number) {
-        switch(property) {
-            case IndicatorProperties.fontsize: {
-                indicator.fontSize = value
-            }
-            case IndicatorProperties.gravity: {
-                indicator.gravity = value
-            }
-            case IndicatorProperties.initialvelocity: {
-                indicator.initialVelocity = value
-            }
-            case IndicatorProperties.randomspread: {
-                indicator.randomSpread = value
-            }
+        if (property == IndicatorProperties.fontsize) {
+            indicator.fontSize = value
+        }
+        else if (property == IndicatorProperties.gravity) {
+            indicator.gravity = value
+        }
+        else if (property == IndicatorProperties.initialvelocity) {
+            indicator.initialVelocity = value
+        }
+        else if (property == IndicatorProperties.randomspread) {
+            indicator.randomSpread = value
         }
     }
 
@@ -107,19 +96,17 @@ namespace damageIndicators {
     //% indicator.shadow=variables_get
     //% indicator.defl=myIndicator
     export function changeIndicatorProperty(indicator: Indicator, property: IndicatorProperties, value: number) {
-        switch (property) {
-            case IndicatorProperties.fontsize: {
-                indicator.fontSize += value
-            }
-            case IndicatorProperties.gravity: {
-                indicator.gravity += value
-            }
-            case IndicatorProperties.initialvelocity: {
-                indicator.initialVelocity += value
-            }
-            case IndicatorProperties.randomspread: {
-                indicator.randomSpread += value
-            }
+        if (property == IndicatorProperties.fontsize) {
+            indicator.fontSize += value
+        }
+        else if (property == IndicatorProperties.gravity) {
+            indicator.gravity += value
+        }
+        else if (property == IndicatorProperties.initialvelocity) {
+            indicator.initialVelocity += value
+        }
+        else if (property == IndicatorProperties.randomspread) {
+            indicator.randomSpread += value
         }
     }
 
@@ -143,28 +130,35 @@ namespace damageIndicators {
         indicator.color = color
     }
 
+    //% block="$indicator color"
+    //% blockId="damageIndicatorsSetColor"
+    //% group="Customization"
+    //% indicator.shadow=variables_get
+    //% indicator.defl=myIndicator
+    export function getIndicatorColor(indicator: Indicator): number {
+        return indicator.color
+    }
+
     //% block="$indicator $property"
     //% blockId="damageIndicatorsGetProperty"
     //% group="Customization"
     //% indicator.shadow=variables_get
     //% indicator.defl=myIndicator
-    export function getIndicatorProperty(indicator: Indicator, property: IndicatorPropertiesGet) {
-        switch (property) {
-            case IndicatorPropertiesGet.fontsize: {
-                return indicator.fontSize
-            }
-            case IndicatorPropertiesGet.gravity: {
-                return indicator.gravity
-            }
-            case IndicatorPropertiesGet.initialvelocity: {
-                return indicator.initialVelocity
-            }
-            case IndicatorPropertiesGet.randomspread: {
-                return indicator.randomSpread
-            }
-            case IndicatorPropertiesGet.color: {
-                return indicator.color
-            }
+    export function getIndicatorProperty(indicator: Indicator, property: IndicatorProperties): number {
+        if (property == IndicatorProperties.fontsize) {
+            return indicator.fontSize
+        }
+        else if (property == IndicatorProperties.gravity) {
+            return indicator.gravity
+        }
+        else if (property == IndicatorProperties.initialvelocity) {
+            return indicator.initialVelocity
+        }
+        else if (property == IndicatorProperties.randomspread) {
+            return indicator.randomSpread
+        }
+        else {
+            return null
         }
     }
 
