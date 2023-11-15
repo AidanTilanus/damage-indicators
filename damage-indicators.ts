@@ -131,7 +131,7 @@ namespace damageIndicators {
     }
 
     //% block="$indicator color"
-    //% blockId="damageIndicatorsSetColor"
+    //% blockId="damageIndicatorsGetColor"
     //% group="Customization"
     //% indicator.shadow=variables_get
     //% indicator.defl=myIndicator
